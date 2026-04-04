@@ -21,7 +21,7 @@ export default function CaseStudy() {
       className="pt-32"
     >
       <div className="container mx-auto px-6 md:px-12">
-        <Link to="/work" className="inline-flex items-center gap-2 text-[#888888] hover:text-white transition-colors mb-12 cursor-hover">
+        <Link to="/work" className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-12 cursor-hover">
           <ArrowLeft className="w-4 h-4" />
           Back to Work
         </Link>
@@ -31,7 +31,7 @@ export default function CaseStudy() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-7xl font-serif mb-6"
+            className="text-5xl md:text-7xl font-serif mb-6 text-text"
           >
             {project.title}
           </motion.h1>
@@ -40,18 +40,18 @@ export default function CaseStudy() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex flex-wrap gap-8 text-[#888888]"
+            className="flex flex-wrap gap-8 text-muted"
           >
             <div>
-              <span className="block text-sm text-white mb-1">Role</span>
+              <span className="block text-sm text-text mb-1">Role</span>
               {project.category}
             </div>
             <div>
-              <span className="block text-sm text-white mb-1">Year</span>
+              <span className="block text-sm text-text mb-1">Year</span>
               {project.year}
             </div>
             <div>
-              <span className="block text-sm text-white mb-1">Tags</span>
+              <span className="block text-sm text-text mb-1">Tags</span>
               {project.tags.join(', ')}
             </div>
           </motion.div>
@@ -65,14 +65,14 @@ export default function CaseStudy() {
           style={{ backgroundColor: project.thumbnail }}
         />
 
-        <div className="max-w-3xl mx-auto prose prose-invert prose-lg mb-32">
-          <h2 className="text-3xl font-serif mb-6 text-white">Overview</h2>
-          <p className="text-[#888888] leading-relaxed mb-12">
+        <div className="max-w-3xl mx-auto prose prose-lg mb-32">
+          <h2 className="text-3xl font-serif mb-6 text-text">Overview</h2>
+          <p className="text-muted leading-relaxed mb-12">
             {project.description}
           </p>
           
-          <h2 className="text-3xl font-serif mb-6 text-white">The Challenge</h2>
-          <p className="text-[#888888] leading-relaxed mb-12">
+          <h2 className="text-3xl font-serif mb-6 text-text">The Challenge</h2>
+          <p className="text-muted leading-relaxed mb-12">
             {project.content}
           </p>
         </div>

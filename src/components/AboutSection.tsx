@@ -17,7 +17,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="py-24 bg-[#141414]" id="about">
+    <section className="py-24 bg-surface" id="about">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div ref={ref}>
@@ -25,12 +25,12 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-4xl md:text-5xl font-serif mb-8"
+              className="text-4xl md:text-5xl font-serif mb-8 text-text"
             >
               Design with purpose.
             </motion.h2>
             
-            <div className="space-y-6 text-[#888888] text-lg leading-relaxed">
+            <div className="space-y-6 text-muted text-lg leading-relaxed">
               {textLines.map((line, index) => (
                 <motion.p
                   key={index}
@@ -50,10 +50,10 @@ export default function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="aspect-[4/5] bg-[#222222] rounded-2xl overflow-hidden relative">
+            <div className="aspect-[4/5] bg-border rounded-2xl overflow-hidden relative">
               {/* Placeholder for portrait */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#1A1A1A] to-[#333333]" />
-              <div className="absolute inset-0 flex items-center justify-center text-[#444444] font-serif text-2xl">
+              <div className="absolute inset-0 bg-gradient-to-tr from-surface to-border" />
+              <div className="absolute inset-0 flex items-center justify-center text-muted font-serif text-2xl">
                 Portrait Image
               </div>
             </div>
@@ -62,9 +62,9 @@ export default function AboutSection() {
             <motion.div 
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -bottom-12 -left-12 w-32 h-32 border border-[#FF6B00]/30 rounded-full border-dashed flex items-center justify-center backdrop-blur-sm"
+              className="absolute -bottom-12 -left-12 w-32 h-32 border border-accent/30 rounded-full border-dashed flex items-center justify-center backdrop-blur-sm"
             >
-              <div className="w-2 h-2 bg-[#FF6B00] rounded-full" />
+              <div className="w-2 h-2 bg-accent rounded-full" />
             </motion.div>
           </motion.div>
         </div>

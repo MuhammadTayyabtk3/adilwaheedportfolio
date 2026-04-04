@@ -26,14 +26,14 @@ export default function TechStack() {
   const { ref, isInView } = useScrollReveal();
 
   return (
-    <section className="py-24 bg-[#141414] overflow-hidden" id="tech-stack">
+    <section className="py-24 bg-surface overflow-hidden" id="tech-stack">
       <div className="container mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl md:text-5xl font-serif mb-6"
+            className="text-4xl md:text-5xl font-serif mb-6 text-text"
           >
             Tech Stack
           </motion.h2>
@@ -41,7 +41,7 @@ export default function TechStack() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xl text-[#888888]"
+            className="text-xl text-muted"
           >
             The tools and technologies I use to bring ideas to life.
           </motion.p>
@@ -70,7 +70,7 @@ export default function TechStack() {
             {techStack.map((tech) => (
               <SwiperSlide key={tech.name}>
                 <div className="group relative flex flex-col items-center py-4">
-                  <div className="w-12 h-12 md:w-16 md:h-16 p-2 rounded-xl bg-[#0A0A0A] border border-[#222222] flex items-center justify-center group-hover:border-[#FF6B00]/50 transition-all duration-300">
+                  <div className="w-12 h-12 md:w-16 md:h-16 p-2 rounded-xl bg-bg border border-border flex items-center justify-center group-hover:border-accent/50 transition-all duration-300">
                     <img 
                       src={tech.icon} 
                       alt={tech.name} 
@@ -78,7 +78,7 @@ export default function TechStack() {
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <span className="mt-3 text-[10px] uppercase tracking-widest text-[#888888] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                  <span className="mt-3 text-[10px] uppercase tracking-widest text-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                     {tech.name}
                   </span>
                 </div>

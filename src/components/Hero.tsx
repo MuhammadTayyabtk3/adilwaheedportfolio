@@ -114,8 +114,8 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-4 mb-6"
             >
-              <div className="w-12 h-[1px] bg-[#FF6B00]"></div>
-              <p className="text-[#FF6B00] font-medium tracking-wide uppercase text-sm h-5">
+              <div className="w-12 h-[1px] bg-accent"></div>
+              <p className="text-accent font-medium tracking-wide uppercase text-sm h-5">
                 <TypewriterText text="Adil Waheed — Full-Stack .NET Developer" />
               </p>
             </motion.div>
@@ -124,7 +124,7 @@ export default function Hero() {
               variants={container}
               initial="hidden"
               animate="visible"
-              className="text-5xl md:text-7xl lg:text-[80px] font-serif leading-[1.1] tracking-tight mb-8"
+              className="text-5xl md:text-7xl lg:text-[80px] font-serif leading-[1.1] tracking-tight mb-8 text-text"
             >
               {words.map((word, index) => (
                 <motion.span
@@ -141,7 +141,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="text-lg md:text-xl text-[#888888] max-w-2xl mb-12 leading-relaxed"
+              className="text-lg md:text-xl text-muted max-w-2xl mb-12 leading-relaxed"
             >
               I specialize in developing robust, scalable, and user-friendly applications using .NET technologies. Currently available for freelance opportunities.
             </motion.p>
@@ -154,14 +154,14 @@ export default function Hero() {
             >
               <MagneticButton
                 to="/work"
-                className="group flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-[#FF6B00] transition-colors duration-300 cursor-hover"
+                className="group flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity duration-300 cursor-hover"
               >
                 View Projects
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
               <MagneticButton
                 href="#contact"
-                className="text-white hover:text-[#FF6B00] font-medium transition-colors cursor-hover px-4 py-4"
+                className="text-text hover:text-accent font-medium transition-colors cursor-hover px-4 py-4"
               >
                 Contact Me
               </MagneticButton>
@@ -172,31 +172,31 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="relative hidden lg:block"
+            className="relative mt-16 lg:mt-0 max-w-md mx-auto lg:max-w-none"
           >
-            <div className="aspect-square bg-[#141414] rounded-3xl overflow-hidden border border-[#222222] relative group">
+            <div className="aspect-square bg-surface rounded-3xl overflow-hidden border border-border relative group">
               <img 
                 src="https://picsum.photos/seed/adil-waheed/800/800" 
                 alt="Adil Waheed" 
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-60" />
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 border-t-2 border-r-2 border-[#FF6B00]/30 rounded-tr-3xl" />
-            <div className="absolute -bottom-6 -left-6 w-24 h-24 border-b-2 border-l-2 border-[#FF6B00]/30 rounded-bl-3xl" />
+            <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-24 sm:h-24 border-t-2 border-r-2 border-accent/30 rounded-tr-3xl" />
+            <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-16 h-16 sm:w-24 sm:h-24 border-b-2 border-l-2 border-accent/30 rounded-bl-3xl" />
             
             {/* Floating badge */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -right-8 top-1/4 bg-[#141414] border border-[#222222] p-4 rounded-2xl backdrop-blur-md"
+              className="absolute -right-4 sm:-right-8 top-1/4 bg-surface border border-border p-3 sm:p-4 rounded-2xl backdrop-blur-md z-10"
             >
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#FF6B00] animate-pulse" />
-                <span className="text-xs font-medium uppercase tracking-wider">Available for Hire</span>
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <span className="text-xs font-medium uppercase tracking-wider text-text">Available for Hire</span>
               </div>
             </motion.div>
           </motion.div>

@@ -24,27 +24,27 @@ export default function ContactSection() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-3xl mx-auto"
         >
-          <h2 className="text-5xl md:text-7xl font-serif mb-8">Let's create something extraordinary.</h2>
-          <p className="text-xl text-[#888888] mb-12">
+          <h2 className="text-5xl md:text-7xl font-serif mb-8 text-text">Let's create something extraordinary.</h2>
+          <p className="text-xl text-muted mb-12">
             Currently available for freelance projects and full-time opportunities.
           </p>
           
           <div className="flex flex-col items-center gap-6">
             <a 
               href={`mailto:${email}?subject=Project Inquiry`}
-              className="group inline-flex items-center gap-4 text-2xl md:text-4xl font-serif border-b-2 border-[#222222] hover:border-[#FF6B00] pb-2 transition-colors cursor-hover"
+              className="group inline-flex items-center gap-4 text-2xl md:text-4xl font-serif border-b-2 border-border hover:border-accent pb-2 transition-colors cursor-hover text-text"
             >
               {email}
-              <ArrowRight className="w-8 h-8 group-hover:translate-x-2 group-hover:text-[#FF6B00] transition-all" />
+              <ArrowRight className="w-8 h-8 group-hover:translate-x-2 group-hover:text-accent transition-all" />
             </a>
 
             <button 
               onClick={copyToClipboard}
-              className="flex items-center gap-2 text-sm text-[#888888] hover:text-white transition-colors cursor-hover"
+              className="flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors cursor-hover"
             >
               {copied ? (
                 <>
-                  <Check size={16} className="text-[#FF6B00]" />
+                  <Check size={16} className="text-accent" />
                   <span>Email Copied!</span>
                 </>
               ) : (

@@ -47,12 +47,13 @@ export default function App() {
       
       {/* Custom Cursor */}
       <motion.div
-        className="fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-50 mix-blend-difference hidden md:block"
+        className="fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-50 hidden md:block"
         animate={{
           x: position.x - 12,
           y: position.y - 12,
           scale: isHovering ? 2.5 : 1,
-          backgroundColor: isHovering ? '#FF6B00' : '#FFFFFF',
+          backgroundColor: isHovering ? 'rgba(0, 31, 63, 0.2)' : '#001F3F',
+          border: isHovering ? '1px solid #001F3F' : 'none',
         }}
         transition={{
           type: 'spring',

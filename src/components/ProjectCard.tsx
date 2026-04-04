@@ -40,13 +40,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       
       <div>
         <div className="flex items-center justify-between mb-2">
-          <h3 className="text-2xl font-serif">{project.title}</h3>
-          <span className="text-[#888888] text-sm">{project.year}</span>
+          <h3 className="text-2xl font-serif text-text">{project.title}</h3>
+          <span className="text-muted text-sm">{project.year}</span>
         </div>
-        <p className="text-[#888888] mb-4">{project.category}</p>
+        <p className="text-muted mb-4">{project.category}</p>
         <div className="flex flex-wrap gap-2">
           {project.tags.slice(0, 3).map(tag => (
-            <span key={tag} className="text-xs px-3 py-1 border border-[#222222] rounded-full text-[#AAAAAA]">
+            <span key={tag} className="text-xs px-3 py-1 border border-border rounded-full text-muted">
               {tag}
             </span>
           ))}

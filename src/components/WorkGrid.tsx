@@ -18,25 +18,25 @@ export default function WorkGrid() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div>
-            <h2 className="text-4xl md:text-5xl font-serif mb-4">Selected Work</h2>
-            <p className="text-[#888888] max-w-md">A collection of my recent .NET development projects, showcasing web applications, APIs, and enterprise solutions built with modern Microsoft technologies.</p>
+            <h2 className="text-4xl md:text-5xl font-serif mb-4 text-text">Selected Work</h2>
+            <p className="text-muted max-w-md">A collection of my recent .NET development projects, showcasing web applications, APIs, and enterprise solutions built with modern Microsoft technologies.</p>
           </div>
           
-          <div className="flex flex-wrap gap-2 md:gap-4 border-b border-[#222222] pb-2">
+          <div className="flex flex-wrap gap-2 md:gap-4 border-b border-border pb-2">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={cn(
                   "relative px-2 py-2 text-sm font-medium transition-colors cursor-hover",
-                  activeCategory === category ? "text-white" : "text-[#888888] hover:text-white"
+                  activeCategory === category ? "text-accent" : "text-muted hover:text-accent"
                 )}
               >
                 {category}
                 {activeCategory === category && (
                   <motion.div
                     layoutId="filter-underline"
-                    className="absolute left-0 right-0 -bottom-[9px] h-[2px] bg-[#FF6B00]"
+                    className="absolute left-0 right-0 -bottom-[9px] h-[2px] bg-accent"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
