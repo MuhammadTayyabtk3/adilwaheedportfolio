@@ -4,7 +4,7 @@ import { projects } from '@/data/projects';
 import ProjectCard from './ProjectCard';
 import { cn } from '@/lib/utils';
 
-const categories = ['All', 'UI/UX Design', 'Brand Identity', 'Mobile App', 'Web Application'];
+const categories = ['All', 'Web Application'];
 
 export default function WorkGrid() {
   const [activeCategory, setActiveCategory] = useState('All');

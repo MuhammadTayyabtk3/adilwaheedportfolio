@@ -14,7 +14,7 @@ export default function About() {
       className="pt-24"
     >
       <div className="container mx-auto px-6 md:px-12 mb-12">
-        <h1 className="text-5xl md:text-7xl font-serif mb-6">About Me</h1>
+        <h1 className="text-5xl md:text-7xl font-serif mb-6 text-text">About Me</h1>
       </div>
       <AboutSection />
       <TechStack />

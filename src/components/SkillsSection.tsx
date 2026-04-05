@@ -3,24 +3,24 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const skillCategories = [
   {
+    title: "Backend & Cloud",
+    icon: <img src="https://github.com/devicons/devicon/raw/master/icons/dot-net/dot-net-original.svg" className="w-6 h-6" alt=".NET" />,
+    skills: [".NET Core / ASP.NET", "C#", "SQL Server", "Entity Framework", "Azure"]
+  },
+  {
     title: "Frontend Development",
     icon: <img src="https://github.com/devicons/devicon/raw/master/icons/react/react-original.svg" className="w-6 h-6" alt="React" />,
-    skills: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Redux"]
+    skills: ["React", "TypeScript", "Tailwind CSS", "Next.js", "PWA"]
   },
   {
-    title: "Backend Development",
-    icon: <img src="https://github.com/devicons/devicon/raw/master/icons/dotnetcore/dotnetcore-original.svg" className="w-6 h-6" alt=".NET" />,
-    skills: [".NET Core", "C#", "ASP.NET MVC", "Web API", "Entity Framework"]
+    title: "Database & AI",
+    icon: <img src="https://github.com/devicons/devicon/raw/master/icons/googlecloud/googlecloud-original.svg" className="w-6 h-6" alt="AI" />,
+    skills: ["PostgreSQL", "MongoDB", "Gemini AI", "GenAI", "Firestore"]
   },
   {
-    title: "Database & Storage",
-    icon: <img src="https://github.com/devicons/devicon/raw/master/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg" className="w-6 h-6" alt="SQL" />,
-    skills: ["SQL Server", "PostgreSQL", "MongoDB", "Redis", "Azure Storage"]
-  },
-  {
-    title: "Tools & DevOps",
-    icon: <img src="https://github.com/devicons/devicon/raw/master/icons/visualstudio/visualstudio-plain.svg" className="w-6 h-6" alt="VS" />,
-    skills: ["Git", "Docker", "Azure", "CI/CD", "Visual Studio"]
+    title: "Tools & Workflow",
+    icon: <img src="https://github.com/devicons/devicon/raw/master/icons/git/git-original.svg" className="w-6 h-6" alt="Git" />,
+    skills: ["Git", "Docker", "Vite", "CI/CD", "Postman"]
   }
 ];
 

@@ -143,7 +143,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="text-lg md:text-xl text-muted max-w-2xl mb-12 leading-relaxed"
             >
-              I specialize in developing robust, scalable, and user-friendly applications using .NET technologies. Currently available for freelance opportunities.
+              I specialize in developing robust, scalable, and user-friendly applications using modern web technologies. Currently available for freelance opportunities.
             </motion.p>
 
             <motion.div
@@ -174,11 +174,11 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="relative mt-16 lg:mt-0 max-w-md mx-auto lg:max-w-none"
           >
-            <div className="aspect-square bg-surface rounded-3xl overflow-hidden border border-border relative group">
+            <div className="aspect-[3/4] bg-surface rounded-3xl overflow-hidden border border-border relative group">
               <img 
-                src="https://picsum.photos/seed/adil-waheed/800/800" 
+                src="https://i.postimg.cc/wMCqSpHQ/IMG-20260405-WA0005.jpg" 
                 alt="Adil Waheed" 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover object-[center_15%] transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-60" />

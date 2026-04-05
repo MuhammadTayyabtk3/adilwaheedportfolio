@@ -13,7 +13,7 @@ export default function AboutSection() {
 
   const textLines = [
     "👋 Hi there! I'm Adil Waheed, a Full-Stack .NET Developer passionate about creating efficient and scalable web applications. With expertise in both front-end and back-end development, I strive to deliver high-quality solutions that meet client requirements and exceed expectations.",
-    "-📫 How to reach me: You can reach out to me via email at adilwaheed2222.com@gmail.com. I'm always open to new opportunities, collaborations, and discussions related to web development and .NET technologies."
+    "-📫 How to reach me: You can reach out to me via email at adilwaheed2222.com@gmail.com. I'm always open to new opportunities, collaborations, and discussions related to web development and modern technologies."
   ];
 
   return (
@@ -50,12 +50,14 @@ export default function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="aspect-[4/5] bg-border rounded-2xl overflow-hidden relative">
-              {/* Placeholder for portrait */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-surface to-border" />
-              <div className="absolute inset-0 flex items-center justify-center text-muted font-serif text-2xl">
-                Portrait Image
-              </div>
+            <div className="aspect-[3/4] bg-border rounded-2xl overflow-hidden relative group">
+              <img 
+                src="https://i.postimg.cc/T2KWHjXn/IMG-20260405-WA0006.jpg" 
+                alt="Adil Waheed Portrait" 
+                className="w-full h-full object-cover object-[center_15%] transition-all duration-700"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
             
             {/* Decorative element */}
