@@ -11,12 +11,47 @@
   --color-text: #001F3F;
   --color-muted: #4B5563;
   --color-accent: #001F3F;
+
+  --color-dark-bg: #0A0A0A;
+  --color-dark-surface: #121212;
+  --color-dark-border: #1F1F1F;
+  --color-dark-text: #F8F9FA;
+  --color-dark-muted: #A1A1AA;
+  --color-dark-accent: #FFFFFF;
 }
 
 @layer base {
   :root {
     background-color: var(--color-bg);
     color: var(--color-text);
+  }
+
+  .dark {
+    --color-bg: var(--color-dark-bg);
+    --color-surface: var(--color-dark-surface);
+    --color-border: var(--color-dark-border);
+    --color-text: var(--color-dark-text);
+    --color-muted: var(--color-dark-muted);
+    --color-accent: var(--color-dark-accent);
+  }
+
+  /* Fix for buttons with white text on accent background in dark mode */
+  .dark .bg-accent {
+    color: var(--color-dark-bg) !important;
+  }
+  
+  /* Ensure icons inside these buttons also inherit the dark color */
+  .dark .bg-accent svg {
+    stroke: var(--color-dark-bg) !important;
+  }
+
+  /* Fix for outline buttons on hover in dark mode */
+  .dark .hover\:bg-accent:hover {
+    color: var(--color-dark-bg) !important;
+  }
+  
+  .dark .hover\:bg-accent:hover svg {
+    stroke: var(--color-dark-bg) !important;
   }
   
   body {

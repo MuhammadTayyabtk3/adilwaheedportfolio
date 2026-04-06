@@ -1,12 +1,13 @@
 import { motion } from 'motion/react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { ArrowRight, Copy, Check } from 'lucide-react';
+import { ArrowRight, Copy, Check, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 
 export default function ContactSection() {
   const { ref, isInView } = useScrollReveal();
   const [copied, setCopied] = useState(false);
   const email = "adilwaheed2222.com@gmail.com";
+  const fiverrUrl = "https://www.fiverr.com/adilwaheed786/";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email);
@@ -30,13 +31,25 @@ export default function ContactSection() {
           </p>
           
           <div className="flex flex-col items-center gap-8">
-            <a 
-              href={`mailto:${email}?subject=Project Inquiry`}
-              className="group inline-flex items-center gap-4 bg-accent text-white px-10 py-5 rounded-full text-xl md:text-2xl font-medium hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-hover shadow-lg shadow-accent/20"
-            >
-              Send me an email
-              <ArrowRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-2 transition-transform" />
-            </a>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a 
+                href={`mailto:${email}?subject=Project Inquiry`}
+                className="group inline-flex items-center gap-4 bg-accent text-white px-10 py-5 rounded-full text-xl md:text-2xl font-medium hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-hover shadow-lg shadow-accent/20"
+              >
+                Send me an email
+                <ArrowRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-2 transition-transform" />
+              </a>
+
+              <a 
+                href={fiverrUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-4 border-2 border-accent text-accent px-10 py-5 rounded-full text-xl md:text-2xl font-medium hover:bg-accent hover:text-white transition-all duration-300 cursor-hover shadow-lg shadow-accent/5"
+              >
+                Hire on Fiverr
+                <ExternalLink className="w-6 h-6 md:w-8 md:h-8" />
+              </a>
+            </div>
 
             <div className="flex flex-col items-center gap-3">
               <p className="text-muted text-sm uppercase tracking-widest">Or copy address</p>

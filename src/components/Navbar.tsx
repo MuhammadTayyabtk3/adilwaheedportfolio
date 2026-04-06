@@ -3,11 +3,13 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Work', path: '/work' },
   { name: 'About', path: '/about' },
+  { name: "Let's Talk", path: '/contact' },
 ];
 
 export default function Navbar() {
@@ -28,15 +30,6 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
-  const scrollToContact = (e: MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setMobileMenuOpen(false);
-  };
-
   return (
     <>
       <header
@@ -52,7 +45,7 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 3).map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
@@ -77,22 +70,28 @@ export default function Navbar() {
                 )}
               </NavLink>
             ))}
-            <button
-              onClick={scrollToContact}
-              className="px-5 py-2.5 rounded-full bg-accent text-white text-sm font-medium hover:opacity-90 transition-opacity cursor-hover"
-            >
-              Let's Talk
-            </button>
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+              <NavLink
+                to="/contact"
+                className="px-5 py-2.5 rounded-full bg-accent text-white text-sm font-medium hover:opacity-90 transition-opacity cursor-hover"
+              >
+                Let's Talk
+              </NavLink>
+            </div>
           </nav>
 
           {/* Mobile Toggle */}
-          <button
-            className="md:hidden z-50 relative text-text p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4 md:hidden z-50 relative">
+            <ThemeToggle />
+            <button
+              className="text-text p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -127,19 +126,6 @@ export default function Navbar() {
                   </NavLink>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="mt-8"
-              >
-                <button
-                  onClick={scrollToContact}
-                  className="px-8 py-4 rounded-full bg-accent text-white text-lg font-medium hover:opacity-90 transition-opacity"
-                >
-                  Let's Talk
-                </button>
-              </motion.div>
             </nav>
           </motion.div>
         )}

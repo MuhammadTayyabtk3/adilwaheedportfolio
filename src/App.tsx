@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -11,6 +11,7 @@ import Home from '@/pages/Home';
 import Work from '@/pages/Work';
 import CaseStudy from '@/pages/CaseStudy';
 import About from '@/pages/About';
+import Contact from '@/pages/Contact';
 import { useCursorFollower } from '@/hooks/useCursorFollower';
 import { useEffect } from 'react';
 
@@ -19,6 +20,20 @@ function ScrollToTop() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+  return null;
+}
+
+function RedirectToHome() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Only redirect if we are not already at the root
+    if (location.pathname !== '/') {
+      navigate('/', { replace: true });
+    }
+  }, []); // Run only once on mount (reload)
+
   return null;
 }
 
@@ -33,6 +48,7 @@ function AnimatedRoutes() {
         <Route path="/work" element={<Work />} />
         <Route path="/work/:slug" element={<CaseStudy />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>
   );
@@ -44,6 +60,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <RedirectToHome />
       
       {/* Custom Cursor */}
       <motion.div

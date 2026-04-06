@@ -103,14 +103,6 @@ export default function Hero() {
     },
   };
 
-  const scrollToContact = (e: MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="min-h-screen flex items-center pt-20 pb-12">
       <div className="container mx-auto px-6 md:px-12">
@@ -167,12 +159,12 @@ export default function Hero() {
                 View Projects
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
-              <button
-                onClick={scrollToContact}
+              <MagneticButton
+                to="/contact"
                 className="text-text hover:text-accent font-medium transition-colors cursor-hover px-4 py-4"
               >
                 Contact Me
-              </button>
+              </MagneticButton>
             </motion.div>
           </div>
 
