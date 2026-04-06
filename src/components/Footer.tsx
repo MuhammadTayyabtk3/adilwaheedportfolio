@@ -34,7 +34,7 @@ export default function Footer() {
             <Linkedin size={20} />
           </a>
           <a 
-            href="https://www.instagram.com/adilwaheed8/" 
+            href="https://www.instagram.com/adilwaheed786/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-muted hover:text-accent transition-colors cursor-hover"

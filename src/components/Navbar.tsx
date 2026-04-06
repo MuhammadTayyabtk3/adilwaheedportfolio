@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useState, useEffect, MouseEvent } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -14,6 +14,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,15 @@ export default function Navbar() {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
+
+  const scrollToContact = (e: MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <>
@@ -67,12 +77,12 @@ export default function Navbar() {
                 )}
               </NavLink>
             ))}
-            <a
-              href="#contact"
+            <button
+              onClick={scrollToContact}
               className="px-5 py-2.5 rounded-full bg-accent text-white text-sm font-medium hover:opacity-90 transition-opacity cursor-hover"
             >
               Let's Talk
-            </a>
+            </button>
           </nav>
 
           {/* Mobile Toggle */}
@@ -123,13 +133,12 @@ export default function Navbar() {
                 transition={{ delay: 0.5 }}
                 className="mt-8"
               >
-                <a
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
+                <button
+                  onClick={scrollToContact}
                   className="px-8 py-4 rounded-full bg-accent text-white text-lg font-medium hover:opacity-90 transition-opacity"
                 >
                   Let's Talk
-                </a>
+                </button>
               </motion.div>
             </nav>
           </motion.div>
