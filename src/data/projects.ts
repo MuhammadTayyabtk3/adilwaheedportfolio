@@ -83,5 +83,17 @@ export const projects: Project[] = [
     slug: 'horizon-lab',
     content: 'Horizon Lab is a corporate portal for a testing laboratory. It streamlines the process of accessing laboratory resources, downloading necessary forms, and staying updated with the latest service pricing and technology.',
     liveUrl: 'https://www.horizonlab.ca/'
+  },
+  {
+    id: '7',
+    title: 'Restaurant Culinary Hub',
+    category: 'Web Application',
+    year: '2024',
+    description: 'A comprehensive restaurant website with menu management, online booking features, and a modern dining experience interface.',
+    tags: ['React', 'Tailwind CSS', 'Restaurant', 'Web Design'],
+    thumbnail: 'https://i.postimg.cc/hv478trp/image.png',
+    slug: 'restaurant-culinary-hub',
+    content: 'This project focuses on the digital presence of a modern restaurant. It includes a responsive menu, gallery, and an integrated reservation system to enhance the customer\'s pre-dining experience.',
+    liveUrl: 'https://restaurants-website-alpha.vercel.app/'
   }
 ];
